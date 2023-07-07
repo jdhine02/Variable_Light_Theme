@@ -1,0 +1,146 @@
+{
+    "BlockType": "dock",
+    "PaddingLeft": 12,
+    "PaddingRight": 4,    
+    "Background": "{BackgroundDefault}",
+    "ColorizeBackground": {
+        "Enabled": true,
+        "Color": "{Item.Team.Color}",
+        "BlendPercentage": 75
+    },
+    "Items": [
+        //left part
+        {
+            "BlockType": "stack",                    
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //logo
+                {
+                    "BlockType": "image",
+                    "MarginLeft" : 12,
+                    "Height": 48,
+                    "MarginRight": 20,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Team.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    }
+                },
+
+                //name
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 600,                    
+                    "Source": "{Item.Team.Name}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameDefault}",
+                    "FontSize": 42,
+                    "Triggers": [
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{MercedesSecondary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Williams}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{WilliamsSecondary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{FerrariSecondary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alfa Romeo}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{AlfaRomeoSecondary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{McLarenPrimary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{AlphaTauriSecondary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Haas}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{HaasPrimary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Aston Martin}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{AstonMartin3rd}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alpine}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{Alpine3rd}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Red Bull}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{RedBull3rd}"
+                                }
+                            ]
+                        }
+                    ]
+                }               
+            ]
+        },
+    ]
+}

@@ -1,0 +1,131 @@
+//header block
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Items": [
+        //headerLeft
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "Spacing": 12,
+            "HorizontalAlignment": "Left",
+            "Items": [
+                //league name
+                
+                        {                            
+                            "BlockType": "text",
+                            "MarginTop": 20,
+                            "Source": "{Season.LeagueInfo.LeagueName}",                            
+                            "FontName": "{FontNameWide}",
+                            "FontSize": 35,
+                            "Foreground" : "{BlackText}",
+                            "Triggers": [
+                                {
+                                    "Condition": "{RenderAlfaRomeoTheme}",
+                                    "Property": "Foreground",
+                                    "Value": "{AlfaRomeoPrimary}"
+                                },
+                            ]
+                        },
+                       
+
+                //main header
+                {
+                    "Name": "headerMainContent",
+                    "BlockType": "stack",
+                    "Spacing": 8,
+                    "Items": [
+                        // {                           
+                        //     "BlockType": "image",
+                        //     "Height": 36,
+                        //     "Source": ""
+                        // },
+
+                       // {
+                       //     "BlockType": "text",                            
+                       //     "VerticalAlignment": "Center",                            
+                       //     "Source": "<header>",
+                       //     "FontName": "{FontNameWide}",
+                       //     "FontSize": 22,
+                      //      "Foreground" :"{BlackText}"
+                      //  },
+
+                       // {                            
+                           // "BlockType": "text",                                                                         
+                           // "MarginLeft": 12,
+                           // "MarginTop": 4,
+                           // "VerticalAlignment": "Center",
+                            //"Source": "<subHeader>",
+                           // "FontName": "{FontNameWide}",
+                           // "FontSize": 22,
+                           // "Foreground" : "{BlackText}"
+                       // }
+                    ]
+                }
+            ]
+        },
+        //headerRight
+                {
+                    "Name": "headerRightPart",
+                    "BlockType": "stack",
+                    "Orientation": "Vertical",
+                    "MarginLeft" : 48,
+                    "HorizontalAlignment": "Right",
+                    "Spacing": 12,
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "Items": [
+                                {
+                                    "BlockType": "stack",
+                                    "Orientation": "Vertical",
+                                    "Spacing": 8,
+                                    "Items": [
+                                        {
+                                            "BlockType": "text",
+                                            "HorizontalAlignment": "Right",
+                                            "Source": "{Season.Name}",
+                                            "FontName": "{FontNameWide}",
+                                            "Foreground" : "{BlackText}",
+                                            "FontSize": 30,
+                                            "Triggers": [
+                                                {
+                                                    "Condition": "{RenderAlfaRomeoTheme}",
+                                                    "Property": "Foreground",
+                                                    "Value": "{AlfaRomeoPrimary}"
+                                                },
+                                            ]
+                                        },
+                                        {                            
+                                            "BlockType": "text",
+                                            "Source": "Calendar",
+                                            "VerticalAlignment" : "Center",
+                                            "HorizontalAlignment": "Right",
+                                            "FontName": "{FontNameWide}",
+                                            "FontSize": 30,
+                                            "Foreground" : "{BlackText}",
+                                            "Triggers": [
+                                                {
+                                                    "Condition": "{RenderAlfaRomeoTheme}",
+                                                    "Property": "Foreground",
+                                                    "Value": "{AlfaRomeoPrimary}"
+                                                },
+                                            ]
+                                        },
+                                    ]
+                                },
+                                {
+                                    "Name": "leagueLogo",
+                                    "BlockType": "image",
+                                    "Height": 85,
+                                    "MarginLeft": 36,
+                                    "Source": "{Season.LeagueInfo.LeagueLogo}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }

@@ -1,0 +1,176 @@
+{
+    "BlockType": "dock",
+    "PaddingLeft": 12,
+    "PaddingRight": 4,    
+    "Background": "{BackgroundDefault}",
+    "ColorizeBackground": {
+        "Enabled": false,
+        "Color": "#FFFF00",
+        "BlendPercentage": 10
+    },
+    "Triggers": [
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "ColorizeBackgroundOptions.Enabled",
+            "Value": true
+        }
+    ],
+    "Items": [
+        //left part
+        {
+            "BlockType": "stack",                    
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //logo
+                {
+                    "BlockType": "image",
+                    "MarginLeft" : 12,
+                    "Height": 48,
+                    "MarginRight": 20,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Team.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    }
+                },
+
+                //name
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 600,                    
+                    "Source": "{Item.Team.Name}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameDefault}",
+                    "FontSize": 42,
+                    "Triggers": [
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{MercedesPrimary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Williams}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{WilliamsSecondary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{FerrariPrimary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alfa Romeo}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{AlfaRomeoSecondary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{McLarenPrimary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{AlphaTauriSecondary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Haas}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{HaasPrimary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Aston Martin}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{AstonMartinSecondary}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alpine}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{Alpine3rd}"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Red Bull}",
+                            "Setters" :
+                            [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "{RedBull4th}"
+                                }
+                            ]
+                        }
+                    ]
+                }               
+            ]
+        },
+
+        //right part
+        {
+            "BlockType": "stack",           
+            "MarginRight": 16,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //color
+                {                    
+                    "BlockType": "shape",
+                    "VerticalAlignment": "Center",
+                    "Width" : 10,
+                    "Height": 48,
+                    "Opacity" : 45,
+                    "ShapeOptions" : 
+                    {
+                        "Type" : "Rectangle",
+                        "Fill" : "{Item.Team.Color}"
+                    }                    
+                }                
+            ]
+        }
+    ]
+}
