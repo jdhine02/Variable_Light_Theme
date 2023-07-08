@@ -73,7 +73,7 @@
                                             {
                                                 "BlockType" : "stack",
                                                 "Orientation" : "Horizontal",
-                                                "Width" : 2000,
+                                                "Width" : "2000",
 
                                                 
                                                 //"PaddingTop" : 10,
@@ -81,7 +81,7 @@
                                                     {
                                                         "BlockType": "itemstack",
                                                         "Spacing": 0,
-                                                        "Height" : 73,
+                                                        "Height" : "{StintsBGHeight}",
                                                         "MaxWidth" : "{Item.RaceDistancePercentage, Converter=NumberMultiply, Parameter=20}",
                                                         "ItemStackOptions": {
                                                             "ItemSource": "{Item.Stints}",
@@ -96,7 +96,7 @@
                                                     {
                                                         "BlockType": "stack",
                                                         "Spacing": 0,
-                                                        "Height" : 73,
+                                                        "Height" : "{StintsBGHeight}",
                                                         "Background": "#ffffff",
                                                         "RenderIf" : "{Item.IsFinished, Converter=BoolReverse}",
                                                         "Items": [
@@ -105,7 +105,7 @@
                                                                 "Source" : "  {Item.PositionIncludeStatus}",
                                                                 "RenderIf" : false,
                                                                 "FontSize" : 30,
-                                                                "PaddingBottom" : 5,
+                                                                "PaddingBottom" : 22,
                                                                 "VerticalAlignment" : "Bottom",
                                                                 "Triggers" : [
                                                                     {

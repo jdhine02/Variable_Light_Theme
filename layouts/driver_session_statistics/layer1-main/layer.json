@@ -243,21 +243,21 @@
                                                         ]
                                                     }
                                                 }, 
-                                                {
-                                                    "Header": "",
-                                                    "Template":
-                                                    {
-                                                        "BlockType" : "component",
-                                                        "ComponentName" : "stats_team",
-                                                        "Triggers" : [
-                                                            {
-                                                                "Condition" : "{Statistics.Header, Converter=StringEquals, Parameter=Top battles}",
-                                                                "Property" : "RenderIf",
-                                                                "Value" : "false"
-                                                            }
-                                                        ]
-                                                    }
-                                                },
+                                                //{
+                                                  //  "Header": "",
+                                                  //  "Template":
+                                                  //  {
+                                                  //      "BlockType" : "component",
+                                                  //      "ComponentName" : "stats_team",
+                                                  //      "Triggers" : [
+                                                  //          {
+                                                  //              "Condition" : "{Statistics.Header, Converter=StringEquals, Parameter=Top battles}",
+                                                  //              "Property" : "RenderIf",
+                                                  //              "Value" : "false"
+                                                  //          }
+                                                  //      ]
+                                                  //  }
+                                               // },
                                           
                                       
                                             //column 0
