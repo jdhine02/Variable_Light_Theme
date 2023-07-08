@@ -33,33 +33,33 @@
                 
                 
                 //session
-                {
-                    "Name": "headerSessionLine",
-                    "BlockType": "stack",
-                    "VerticalAlignment": "Center",
-                    "Spacing": 8,
-                    "Items": [
+               // {
+                 //   "Name": "headerSessionLine",
+                   //"BlockType": "stack",
+                    //"VerticalAlignment": "Center",
+                    //"Spacing": 8,
+                    //"Items": [
                        
 
-                        {
-                            "Name": "CountryName",
-                            "BlockType": "text",
-                            "MarginLeft": 0,
-                            "VerticalAlignment": "Center",
-                            "Source": "{Session.Track.CountryName}",
-                            "FontName": "{FontNameWide}",
-                            "FontSize": 26,
-                            "Foreground" : "{BlackText}",
-                        },
-                        {
-                            "Name": "CountryFlag",
-                            "BlockType": "image",
-                            "VerticalAlignment": "Center",
-                            "Height": 48,
-                            "Source": "{Session.Track.Nation.LogoPath}"
-                        },
-                    ]
-                },
+                        //{
+                            //"Name": "CountryName",
+                            //"BlockType": "text",
+                            //"MarginLeft": 0,
+                            //"VerticalAlignment": "Center",
+                            //"Source": "{Session.Track.CountryName}",
+                            //"FontName": "{FontNameWide}",
+                            //"FontSize": 26,
+                            //"Foreground" : "{BlackText}",
+                        //},
+                        //{
+                            //"Name": "CountryFlag",
+                            //"BlockType": "image",
+                           // "VerticalAlignment": "Center",
+                           // "Height": 48,
+                           // "Source": "{Session.Track.Nation.LogoPath}"
+                       // },
+                   // ]
+                //},
                         {
                             "Name": "LocationName",
                             "BlockType": "text",
@@ -260,7 +260,7 @@
                                             "VerticalAlignment": "Center",
                                             "FontName": "{FontNameWide}",
                                             "FontSize": 26,
-                                            "Foreground" : "{BlackText}",
+                                            "Foreground" : "{GoldText}",
                                             "Source": "{Session.WeatherType}"
                                         },
                                         
@@ -278,7 +278,7 @@
                                             "Source": "[+]{Session.AirTemperature, converter=TemperatureCelciusToFahrenheit} [°F /] {Session.AirTemperature} [°C Air Temp]",
                                             "FontName": "{FontNameWide}",
                                             "FontSize": 26,
-                                            "Foreground" : "{GoldText}"
+                                            "Foreground" : "{BlackText}"
                                         },                                          
                                     ],
                                     "RenderIf":"{RenderAirTemp}",
@@ -294,7 +294,7 @@
                                             "Source": "[+]{Session.TrackTemperature, converter=TemperatureCelciusToFahrenheit} [°F / +]{Session.TrackTemperature} [°C Track Temp]",
                                             "FontName": "{FontNameWide}",
                                             "FontSize": 26,
-                                            "Foreground" : "{GoldText}"
+                                            "Foreground" : "{BlackText}"
                                         }
                                     ],
                                     "RenderIf":"{RenderTrackTemp}",

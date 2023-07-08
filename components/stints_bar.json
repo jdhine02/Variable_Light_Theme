@@ -2,20 +2,21 @@
 {
     "BlockType": "stack",
     "VerticalAlignment": "Center",
-    "Orientation" : "Vertical",
     "Items": [
         
         {
             "BlockType" : "Canvas",
             "Orientation" : "Vertical",
             "Background": "#ffffff",
+            "Spacing": 0,
+            "Height" : "{StintsBGHeight}",
             "Items" : [
                 
                 {
                     "BlockType" : "shape",
                     "Height" : "{StintsBarHeight}",
                     "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
+                    "PositionY" : "{StintsBarPos}",
                     "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
                     "ShapeOptions" : {
                         "ShapeType" : "rectangle",
@@ -38,7 +39,7 @@
                     "BlockType" : "shape",
                     "Height" : "{StintsBarHeight}",
                     "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
+                    "PositionY" : "{StintsBarPos}",
                     "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
                     "ShapeOptions" : {
                         "ShapeType" : "rectangle",
@@ -61,7 +62,7 @@
                     "BlockType" : "shape",
                     "Height" : "{StintsBarHeight}",
                     "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
+                    "PositionY" : "{StintsBarPos}",
                     "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
                     "ShapeOptions" : {
                         "ShapeType" : "rectangle",
@@ -84,7 +85,7 @@
                     "BlockType" : "shape",
                     "Height" : "{StintsBarHeight}",
                     "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
+                    "PositionY" : "{StintsBarPos}",
                     "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
                     "ShapeOptions" : {
                         "ShapeType" : "rectangle",
@@ -107,7 +108,7 @@
                     "BlockType" : "shape",
                     "Height" : "{StintsBarHeight}",
                     "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
+                    "PositionY" : "{StintsBarPos}",
                     "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
                     "ShapeOptions" : {
                         "ShapeType" : "rectangle",
@@ -141,14 +142,14 @@
                             "FontName" : "{FontNameBold}",
                             "FontSize" : 25,
                             "PaddingBottom" : "{StintsBarHeight}",
-                            "Height" : 25,
+                            "Height" : 55,
                             "Triggers" : [
                                 {
                                     "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
                                     "Setters" : [
                                         {
                                             "Property" : "RenderIf",
-                                            "Value" : false
+                                            "Value" : true
                                         }
                                     ]
                                 }
@@ -163,7 +164,7 @@
                             "Source" : "images/tyres/tyres_{Item.Tyres}.png",
                             "RenderIf" : true,
                             "Height" : 37,
-                            "PaddingBottom" : "25",
+                            "PaddingBottom" : "10",
                             
                             
                         }

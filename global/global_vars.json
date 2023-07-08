@@ -14,6 +14,13 @@
     "MarginRoot" : "64, 40, 48, 40",
     "MarginTable" : "0, 0",
 
+    //Stints
+    "FontSizeRightPart" : "30",
+    "StintsBarHeight" : "30",
+    "StintsBarPositionY" : "28",
+    "StintsBarPos": "50",
+    "StintsBGHeight" : "100",
+
     //FIA text
     "FIAFontSize": "28",
     "FIAText": "#000000",
@@ -28,7 +35,7 @@
     "PenaltySeparator": "#000000",
     "FIABGColor" : "#09FFFFFF",
 
-    //Comparion
+    //Comparison
     "ComparisonCellWidth" : "156",
     "ComparisonCellHeight" : "73",
     "ComparisonFontSize" : "25",
@@ -138,9 +145,7 @@
     //Alfa Romeo Team Color #
     //Haas Team Color #
 
-    "FontSizeRightPart" : "30",
-    "StintsBarHeight" : "30",
-    "StintsBarPositionY" : "28",
+
 
 
     

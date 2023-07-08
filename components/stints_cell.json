@@ -4,6 +4,8 @@
     "BackgroundImage" : "images/data_bg/stints_bg.png",
     "MarginLeft" : "{MarginLeftTableCell}",
     "PaddingRight": 15,
+    "Spacing": 0,
+    "Height" : "{StintsBGHeight}",
     "Items" : [
         {
             "BlockType": "itemstack",
