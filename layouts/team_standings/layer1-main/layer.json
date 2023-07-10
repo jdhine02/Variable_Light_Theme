@@ -52,7 +52,7 @@
                             "Header": "",
                             "Template": {
                                 "BlockType" : "component",                                
-                                "ComponentName" : "position_cell",
+                                "ComponentName" : "position_cell_stats",
                                 "ComponentOptions" :{
                                     "Vars" :{
                                         "position" : "{Item.Position}"
@@ -67,20 +67,26 @@
                             "WidthStretch" : true,                            
                             "Template": {
                                 "BlockType" : "component",
-                                "ComponentName" : "team_line_cell"   
+                                "ComponentName" : "team_line_cell_stats"   
                             }
                         },                        
 
                         //points
+                        //points
                         {
-                            "Header": "",
+                            "Header": "Points",
                             "MarginLeft" : 20,
                             "Template": {
                                 
                                 "BlockType": "dock",
                                 "PaddingLeft" : 24,
                                 "PaddingRight" : 24,
-                                "Background": "{BackgroundDefault}",                                
+                                "Background": "{BackgroundDefault}",
+                                "ColorizeBackground": {
+                                    "Enabled": true,
+                                    "Color": "#D4AF37",
+                                    "BlendPercentage": 50
+                                },                                                       
                                 "Items": [                                    
                                     {
                                         "BlockType": "text",
@@ -88,45 +94,115 @@
                                         "HorizontalAlignment": "Right",
                                         "VerticalAlignment": "Center",
                                         "Foreground" : "{WhiteText}",
-                                        "TextOptionsExtern": "primaryNumber"
+                                        "TextOptionsExtern": "primaryNumber",
+                                        "Triggers":
+                                        [
+                                            {
+                                                "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                                "Property": "FontSize",
+                                                "ConditionAnd": "{RenderP1Colors}",
+                                                "Value": 60
+                                            },
+                                            {
+                                                "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                                "ConditionAnd": "{RenderP2Colors}",
+                                                "Property": "FontSize",
+                                                "Value": 55
+                                            },
+                                            {
+                                                "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                                "ConditionAnd": "{RenderP3Colors}",
+                                                "Property": "FontSize",
+                                                "Value": 50
+                                            },
+                                        ]
                                     }
                                 ],
-                                "Triggers" :
-                                [
-                                    {
-                                        "Condition" : "{Standings.IsPositionJumpForTeamExists}",
-                                        "Property" : "PaddingRight",
-                                        "Value" : 4
-                                    }
-                                ]
                             }
                         },
 
-                         //position_jump
+                         //pts gap
                          {
                             "Header": "",
                             "PaddingLeft" : 0,
                             "MarginLeft" : -4,
+                            "MarginTop": 10,
                             "Template":
                             {
                                 "BlockType" : "component",
                                 "PaddingLeft" : 0,                               
                                 "PaddingRight" : 12,
-                                "ComponentName" : "position_jump_cell"    
+                                "ComponentName" : "points_gap"    
                             }
                         },
-
                         //podiums
                         {
-                            "Header" : "Wins",
-                            "MarginLeft" : 20,
+                            "Header" : "Races",
+                            "MarginLeft" : 12,
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "Background": "{BackgroundDefault}",
+                                "Background": "{#FFFFFF}",
+                                "Source" : "{Item.RacesCount, Converter=NumberZeroToEmpty}",                                
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Foreground":"{BlackText}",
+                                "FontSize":40,
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+
+                        {
+                            "Header" : "Wins",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{#FFFFFF}",
                                 "Source" : "{Item.CountP1, Converter=NumberZeroToEmpty}",
                                 "Foreground" : "{P1Foreground}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
                             }
                         },
                         {
@@ -135,10 +211,32 @@
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "Background": "{BackgroundDefault}",
+                                "Background": "{#FFFFFF}",
                                 "Source" : "{Item.CountP2, Converter=NumberZeroToEmpty}",
                                 "Foreground" : "{P2Foreground}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
                             }
                         },
                         {
@@ -147,10 +245,238 @@
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "Background": "{BackgroundDefault}",
+                                "Background": "{#FFFFFF}",
                                 "Source" : "{Item.CountP3, Converter=NumberZeroToEmpty}",
                                 "Foreground" : "{P3Foreground}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "Best Finish",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{#FFFFFF}",
+                                "Source" : "{Item.BestPos, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{BlackText}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+
+                        //Finish Stats
+                        {
+                            "Header" : "Top 3s",
+                            "MarginLeft" : 12,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{#FFFFFF}",
+                                "Source" : "{Item.CountTop3, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{BlackText}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "Top 5s",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{#FFFFFF}",
+                                "Source" : "{Item.CountTop5, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{BlackText}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "Top 10s",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{#FFFFFF}",
+                                "Source" : "{Item.CountTop10, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{BlackText}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "DNFs",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{#FFFFFF}",
+                                "Source" : "{Item.CountDnf, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{FerrariPrimary}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "DNSs",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{#FFFFFF}",
+                                "Source" : "{Item.CountDns, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{DNFText}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
                             }
                         },
 
@@ -161,39 +487,112 @@
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "Background": "{BackgroundDefault}",
+                                "Background": "{#FFFFFF}",
                                 "Source" : "{Item.RaceFastestLapCount, Converter=NumberZeroToEmpty}",
                                 "Foreground" : "{FastestLap}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
                             }
                         },
                         {
-                            "Header" : "Poles",
+                            "Header" : "DoD",
                             "MarginLeft" : 0,
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "Background": "{BackgroundDefault}",
-                                "Source" : "{Item.CountQualP1, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{Poles}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "Background": "{#FFFFFF}",
+                                "Source" : "{Item.RaceDriverDayCount, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{WilliamsSecondary}",
+                                "TextOptionsExtern" : "primaryNumber",
+                                "FontSize":40,
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
                             }
-                        },                        
-
-                        //events
+                        },  
                         {
-                            "Header" : "Events",
-                            "MarginLeft" : 12,
-                            "Template":{
-                                "BlockType" : "text",
+                            "Header": "Warnings",
+                            "Template": {
+                                "BlockType": "dock",
                                 "Padding": "24, 0",
-                                "Background": "{BackgroundDefault}",
-                                "Source" : "{Item.EventsCount, Converter=NumberZeroToEmpty}",                                
-                                "TextOptionsExtern" : "primaryNumber"
-                            }
-                        }
-
-
+                                "Background": "{#FFFFFF}",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.PenaltyPoints, Converter=NumberZeroToEmpty}",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "TextOptions": {
+                                                        "FontName": "{FontNameDefault}",
+                                                        "FontSize":40,
+                                                        "Foreground": "{FerrariPrimary}",
+                                                        "HorizontalAlignment": "Center",
+                                                        "TextOptionsExtern" : "primaryNumber",
+                                            },
+                                            "Triggers":
+                                            [
+                                                {
+                                                    "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                                    "Property": "FontSize",
+                                                    "ConditionAnd": "{RenderP1Colors}",
+                                                    "Value": 60
+                                                },
+                                                {
+                                                    "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                                    "ConditionAnd": "{RenderP2Colors}",
+                                                    "Property": "FontSize",
+                                                    "Value": 55
+                                                },
+                                                {
+                                                    "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                                    "ConditionAnd": "{RenderP3Colors}",
+                                                    "Property": "FontSize",
+                                                    "Value": 50
+                                                },
+                                            ]
+                                        },                                        
+                                    ]
+                                },
+                            },                
                     ]
                 }
             }

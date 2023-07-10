@@ -74,7 +74,7 @@
                                         "BlockType": "text",
                                         "MarginLeft": 12,
                                         "VerticalAlignment": "Center",
-                                        "Source": "[{Event.Track.CircuitName} Grand Prix]",
+                                        "Source": "[{Event.Track.CircuitName, converter=StringToUpperString} GRAND PRIX]",
                                         "TextOptionsExtern": "CountryName",
                                         "FontName": "{FIAFontWide}",
                                         "Foreground":"{FIAGrandPrix}",
