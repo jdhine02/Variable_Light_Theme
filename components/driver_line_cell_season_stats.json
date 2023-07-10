@@ -26,7 +26,7 @@
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
                     "FontName": "{F1NumbersMercedes-Bold}",
-                    "Foreground":"{BlackText}",
+                    "Foreground":"{Item.Team.Color}",
                     "FontSize": 70,
                     "Triggers":[
                         //{

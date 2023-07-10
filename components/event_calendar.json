@@ -8,7 +8,7 @@
             "Orientation": "Horizontal",
             "BackgroundImage": "images/Modern/rowbg.png",
             "Padding": "5, 25, 20, 5",
-            "Width": 600,
+            "Width": 650,
             "Height": 160,
             "MarginTop": 5,
             "MarginBottom": 5,

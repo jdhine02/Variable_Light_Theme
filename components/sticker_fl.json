@@ -30,7 +30,7 @@
             "HorizontalAlignment" : "Center",
             "FontName" : "{FontNameBold}",
             "PaddingBottom" : 25,
-            "FontSize" : 35,
+            "FontSize" : 28,
             "Foreground" : "#ffffff"
         },
 
