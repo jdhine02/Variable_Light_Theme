@@ -47,7 +47,7 @@
                                         "TextOptions" : {
                                             "HorizontalAlignment" : "Center",
                                             "FontSize" : "72",
-                                            "Foreground" : "B"
+                                            "Foreground" : "#ffffff"
                                         }
                                     },
                                     {
@@ -172,6 +172,26 @@
                                             }
                                         }
                                     },
+                                    //Comp Points Gap
+                                    {
+                                        "BlockType" : "component",
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row",
+                                            "Vars" : {
+                                                "statname" : "Gap to P1",
+                                                "statval" : "+{Item.Driver0.PointsToLeaderDiff}",
+                                                "statvalsec" : "+{Item.Driver1.PointsToLeaderDiff}",
+                                                "bg" : "mid"
+                                            },
+                                            "Triggers" : [
+                                                {
+                                                    "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                                    "Property" : "Source",
+                                                    "Value" : " "
+                                                },             
+                                            ]
+                                        }
+                                    },                                    
                                     //Comp Races
                                     {
                                         "BlockType" : "component",
@@ -217,7 +237,21 @@
                                         }
                                     },
                                     
-                                    
+                                    //Best Finish
+                                    {
+                                        "BlockType" : "component",
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row_double",
+                                            "Vars" : {
+                                                "statname" : "Best",
+                                                "statnamesec": "Finish",
+                                                "statval" : "{Item.Driver0.BestPos}",
+                                                "statvalsec" : "{Item.Driver1.BestPos}",
+                                                "bg" : "mid"
+                                            },
+                                        },
+                                    },    
+
                                     //Poles
                                     {
                                         "BlockType" : "component",
