@@ -34,7 +34,7 @@
                     "Items" : [
                         {
                             "BlockType" : "text",
-                            "Source" : "[Streamer]: ",
+                            "Source" : "",
                             "HorizontalAlignment": "Right",
                             "RenderIf": "{SecondCommentator, Converter=EmptyObjectToFalse}",
                             "VerticalAlignment" : "Bottom",
@@ -85,7 +85,7 @@
                     "Items" : [
                         {
                             "BlockType" : "text",
-                            "Source" : "Second commentator: ",
+                            "Source" : "",
                             "HorizontalAlignment": "Right",
                             "VerticalAlignment" : "Bottom",
                             "TextOptions": {
