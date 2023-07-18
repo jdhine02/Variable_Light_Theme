@@ -51,7 +51,7 @@
                                     "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
                                     "Property": "Foreground",
                                     "Value": "{DNFText}"
-                                }
+                                },
                             ]
                         },
                         {
@@ -253,7 +253,8 @@
                                             "FontName": "{FontNameDefault}",
                                             "Foreground": "{GoldText}",
                                             "MarginTop": 10,
-                                            "FontSize": 16
+                                            "FontSize": 16,
+                                            "RenderIf": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
                                         },
                                         {
                                             "BlockType": "text",
