@@ -30,6 +30,13 @@
                             "Source": "{Item.DateLocal, Converter=DateToTime}",
                             "HorizontalAlignment": "Center",
                             "VerticalAlignment": "Center",
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
+                                    "Property": "Foreground",
+                                    "Value": "{DNFText}"
+                                }
+                            ]
                         },
                         {
                             "BlockType": "text",
@@ -39,6 +46,13 @@
                             "Source": "{Item.DateLocal, Converter=DateToDayOfMonth}",
                             "HorizontalAlignment": "Center",
                             "VerticalAlignment": "Center",
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
+                                    "Property": "Foreground",
+                                    "Value": "{DNFText}"
+                                }
+                            ]
                         },
                         {
                             "BlockType": "dock",
@@ -93,9 +107,16 @@
                                     "Foreground": "{GoldText}",
                                     "FontName": "{FontNameDefault}",
                                     "FontSize": 17,
-                                    "RenderIf": "{Item.RaceType, converter=StringEquals, parameter=Sprint}"
-                                }
-                            }
+                                    "RenderIf": "{Item.RaceType, converter=StringEquals, parameter=Sprint}",
+                                    "Triggers": [
+                                        {
+                                            "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
+                                            "Property": "Foreground",
+                                            "Value": "{DNFText}"
+                                        }
+                                    ]
+                                },
+                            },
                         },
                         {
                             "BlockType": "text",
@@ -108,7 +129,14 @@
                             "TextOptions" : 
                             {
                                 "Wrap" : true
-                            }
+                            },
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
+                                    "Property": "Foreground",
+                                    "Value": "{DNFText}"
+                                }
+                            ]
 
                         },
                     ]
@@ -133,7 +161,14 @@
                                     "FontName": "{FontNameDefault}",
                                     "VerticalAlignment": "Top",
                                     "FontSize": 17,
-                                    "Source": "[ROUND] {Item.Position}"
+                                    "Source": "[ROUND] {Item.Position}",
+                                    "Triggers": [
+                                        {
+                                            "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
+                                            "Property": "Foreground",
+                                            "Value": "{DNFText}"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -150,6 +185,13 @@
                             {
                                 "Wrap" : true
                             },
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
+                                    "Property": "Foreground",
+                                    "Value": "{DNFText}"
+                                }
+                            ]
                         },
                         {
                             "BlockType": "text",
@@ -164,6 +206,13 @@
                                 "Wrap" : false
                             },
                             "Source": "{Item.Track.CircuitFullName, converter=StringToUpperString}",
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
+                                    "Property": "Foreground",
+                                    "Value": "{DNFText}"
+                                }
+                            ]
 
                         },
                         {
