@@ -18,7 +18,7 @@
                     "MarginRight": 20,
                     "VerticalAlignment": "Center",
                     "ImageOptions": {
-                        "Path": "images/logos/{Item.Team.Name}.png",
+                        "Path": "{Item.Team.LogoPath}",
                         "VerticalAlignment": "Center"
                     }
                 },
