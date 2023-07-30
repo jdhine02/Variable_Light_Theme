@@ -204,9 +204,21 @@
                                                 "bg" : "mid"
                                             }
                                         }
-                                    },
-                                    
-                                
+                                    },                                    
+                                    //Comp Races
+                                    {
+                                        "BlockType" : "component",
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row_double",
+                                            "Vars" : {
+                                                "statname" : "Penalty",
+                                                "statnamesec": "Pts",
+                                                "statval" : "{Item.Driver0.PenaltyPoints}",
+                                                "statvalsec" : "{Item.Driver1.PenaltyPoints}",
+                                                "bg" : "mid"
+                                            }
+                                        }
+                                    },                                
                                     // Count DNF
                                     {
                                         "BlockType" : "component",
@@ -265,6 +277,33 @@
                                             }
                                         }
                                     },
+                                    //Best Qual
+                                    {
+                                        "BlockType" : "component",
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row",
+                                            "Vars" : {
+                                                "statname" : "Best Qual",
+                                                "statval" : "{Item.Driver0.BestPosQual}",
+                                                "statvalsec" : "{Item.Driver1.BestPosQual}",
+                                                "bg" : "mid"
+                                            }
+                                        }
+                                    },                                    
+                                    // Finishes in Pts
+                                    {
+                                        "BlockType" : "component",
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row_double",
+                                            "Vars" : {
+                                                "statname" : "Finishes",
+                                                "statnamesec" : "in Pts",
+                                                "statval" : "{Item.Driver0.CountTop10}",
+                                                "statvalsec" : "{Item.Driver1.CountTop10}",
+                                                "bg" : "mid"
+                                            }
+                                        }
+                                    },
                                     // FastestLaps
                                     {
                                         "BlockType" : "component",
@@ -278,7 +317,7 @@
                                                 "bg" : "mid"
                                             }
                                         }
-                                    },
+                                    },                                 
                                     //DOTD
                                     {
                                         "BlockType" : "component",
