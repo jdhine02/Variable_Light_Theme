@@ -204,21 +204,7 @@
                                                 "bg" : "mid"
                                             }
                                         }
-                                    },                                    
-                                    //Comp Races
-                                    {
-                                        "BlockType" : "component",
-                                        "ComponentOptions" : {
-                                            "ComponentName" : "comparison_row_double",
-                                            "Vars" : {
-                                                "statname" : "Penalty",
-                                                "statnamesec": "Pts",
-                                                "statval" : "{Item.Driver0.PenaltyPoints}",
-                                                "statvalsec" : "{Item.Driver1.PenaltyPoints}",
-                                                "bg" : "mid"
-                                            }
-                                        }
-                                    },                                
+                                    },                                                                   
                                     // Count DNF
                                     {
                                         "BlockType" : "component",
