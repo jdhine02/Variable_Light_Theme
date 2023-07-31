@@ -714,7 +714,7 @@
                                 "Items": [
                                     {
                                         "BlockType": "text",
-                                        "Source": "{Item.PenaltyPoints, Converter=NumberZeroToEmpty}",
+                                        "Source": "{Item.PenaltyPointsActive, Converter=NumberZeroToEmpty}",
                                         "HorizontalAlignment": "Center",
                                         "VerticalAlignment": "Center",
                                         "TextOptions": {
