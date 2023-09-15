@@ -15,6 +15,7 @@
             "Foreground" : "{BlackText}",
             "FontSize": 25,
             "TextOptionsExtern": "primaryNumber",
+            "RenderForce" : true,
             "Triggers" : [
                 {
                     "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",

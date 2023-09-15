@@ -8,6 +8,7 @@
     "FontName": "{FontNameDefault}",
     "FontSize": 40,
     "Foreground": "{BlackText}",
+    "RenderForce" : true,
     "TextOptions": {
         "HorizontalAlignment": "Center"    
     },

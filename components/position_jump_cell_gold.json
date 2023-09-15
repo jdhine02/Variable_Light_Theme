@@ -16,7 +16,8 @@
             "PaddingRight" : 4,                           
             "HorizontalAlignment": "Center",
             "VerticalAlignment" : "Center",
-            "Spacing" : 4,            
+            "Spacing" : 4,    
+            "RenderForce" : true,        
             "Items" :[
                 {
                     "BlockType" : "image",

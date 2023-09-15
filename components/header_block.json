@@ -19,7 +19,7 @@
                             "Source": "{Season.LeagueInfo.LeagueName}",                            
                             "FontName": "{FontNameWide}",
                             "FontSize": 36,
-                            "Foreground" : "{GoldText}"
+                            "Foreground" : "{BlackText}"
                         },
                         {                            
                             "BlockType": "text",
@@ -104,7 +104,7 @@
                                     "HorizontalAlignment": "Right",
                                     "Source": "[Round] {Season.SeasonCurrentNumberEvent} [of] {Season.SeasonOverallNumberEvents}",
                                     "FontName": "{FontNameWide}",
-                                    "Foreground" : "{GoldText}",
+                                    "Foreground" : "{BlackText}",
                                     "FontSize": 36
                                 },
 
