@@ -35,29 +35,25 @@
                                         "Source": "{Season.LeagueInfo.LeagueLogo}",
                                         "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
                                     },
-                                    {
-                                    "BlockType": "stack",
-                                    "Orientation":"Vertical",
-                                    "VerticalAlignment": "Center",
-                                    "MarginLeft": 20,
-                                    "Items": [
                                             {
                                                 "BlockType": "text",
                                                 "Source": "{Season.LeagueInfo.LeagueName}",
+                                                "VerticalAlignment": "Center",
                                                 "FontName": "{FIAFontWide}",
+                                                "MarginLeft":12,
                                                 "Foreground":"{FIAText}",
                                                 "FontSize": 30
                                             },
                                             {
                                                 "BlockType": "text",
                                                 "Source": "{Season.Name}",
+                                                "MarginLeft":12,
+                                                "MarginTop": 2,
                                                 "VerticalAlignment": "Center",
                                                 "FontName": "{FIAFontWide}",
                                                 "FontSize": 25,
                                                 "Foreground": "{FIAText}"
                                             }
-                                        ]
-                                    }
                                 ]
                             },
                             //session
@@ -78,7 +74,7 @@
                                         "TextOptionsExtern": "CountryName",
                                         "FontName": "{FIAFontWide}",
                                         "Foreground":"{FIAGrandPrix}",
-                                        "FontSize": 35
+                                        "FontSize": 30
                                     },
 
                                     {

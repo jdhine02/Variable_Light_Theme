@@ -291,12 +291,14 @@
                                 "MarginLeft": 12,
                                 "Background": "{#FFFFFF}",
                                 "HorizontalAlignment": "Center",
+                                "RenderForce": true,
                                 "Items": [
                                     {
                                         "BlockType": "text",
                                         "Source": "{Item.LapsCount, Converter=NumberZeroToEmpty}",
                                         "HorizontalAlignment": "Center",
-                                        "VerticalAlignment": "Center",
+                                        "VerticalAlignment": "Center", 
+                                        "RenderForce": true,                                       
                                         "TextOptions": {
                                             "FontName": "{FontNameDefault}",
                                             "FontSize": 24,      

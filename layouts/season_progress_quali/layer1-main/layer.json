@@ -88,7 +88,8 @@
                                         "HorizontalAlignment": "Right",
                                         "VerticalAlignment": "Center",
                                         "Foreground" : "{WhiteText}",
-                                        "TextOptionsExtern": "primaryNumber"
+                                        "TextOptionsExtern": "primaryNumber",
+                                        "RenderForce" : true,
                                     }
                                 ],
                                 "Triggers" :

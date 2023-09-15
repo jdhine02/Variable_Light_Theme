@@ -58,7 +58,7 @@
                             "MarginRight" : 0,
                             "Template": {
                                 "BlockType": "component",
-                                "ComponentName": "team_line_cell"
+                                "ComponentName": "team_line_cell_stats"
                             }
                         },
 

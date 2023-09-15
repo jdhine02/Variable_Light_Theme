@@ -70,8 +70,6 @@
                                 "ComponentName" : "team_line_cell_stats"   
                             }
                         },                        
-
-                        //points
                         //points
                         {
                             "Header": "Points",
@@ -95,6 +93,7 @@
                                         "VerticalAlignment": "Center",
                                         "Foreground" : "{WhiteText}",
                                         "TextOptionsExtern": "primaryNumber",
+                                        "RenderForce" : true,
                                         "Triggers":
                                         [
                                             {
@@ -136,44 +135,44 @@
                             }
                         },
                         //podiums
-                        {
-                            "Header" : "Races",
-                            "MarginLeft" : 12,
-                            "Template":{
-                                "BlockType" : "text",
-                                "Padding": "24, 0",
-                                "Background": "{#FFFFFF}",
-                                "Source" : "{Item.RacesCount, Converter=NumberZeroToEmpty}",                                
-                                "TextOptionsExtern" : "primaryNumber",
-                                "Foreground":"{BlackText}",
-                                "FontSize":40,
-                                "Triggers":
-                                [
-                                    {
-                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
-                                        "Property": "FontSize",
-                                        "ConditionAnd": "{RenderP1Colors}",
-                                        "Value": 60
-                                    },
-                                    {
-                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
-                                        "ConditionAnd": "{RenderP2Colors}",
-                                        "Property": "FontSize",
-                                        "Value": 55
-                                    },
-                                    {
-                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
-                                        "ConditionAnd": "{RenderP3Colors}",
-                                        "Property": "FontSize",
-                                        "Value": 50
-                                    },
-                                ]
-                            }
-                        },
+                        //{
+                            //"Header" : "Races",
+                           // "MarginLeft" : 12,
+                          //  "Template":{
+                           //     "BlockType" : "text",
+                            //    "Padding": "24, 0",
+                            //    "Background": "{#FFFFFF}",
+                                //"Source" : "{Item.RacesCount, Converter=NumberZeroToEmpty}",                                
+                               // "TextOptionsExtern" : "primaryNumber",
+                               // "Foreground":"{BlackText}",
+                              //  "FontSize":40,
+                              //  "Triggers":
+                              //  [
+                                   // {
+                                       // "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                       // "Property": "FontSize",
+                                       // "ConditionAnd": "{RenderP1Colors}",
+                                       // "Value": 60
+                                   // },
+                                   // {
+                                      //  "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                       // "ConditionAnd": "{RenderP2Colors}",
+                                       // "Property": "FontSize",
+                                       // "Value": 55
+                                   // },
+                                    //{
+                                        //"Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                       // "ConditionAnd": "{RenderP3Colors}",
+                                       // "Property": "FontSize",
+                                       // "Value": 50
+                                    //},
+                                //]
+                            //}
+                        //},
 
                         {
                             "Header" : "Wins",
-                            "MarginLeft" : 0,
+                            "MarginLeft" : 12,
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
@@ -561,6 +560,7 @@
                                         "Source": "{Item.PenaltyPoints, Converter=NumberZeroToEmpty}",
                                         "HorizontalAlignment": "Center",
                                         "VerticalAlignment": "Center",
+                                        "RenderForce": true,
                                         "TextOptions": {
                                                         "FontName": "{FontNameDefault}",
                                                         "FontSize":40,

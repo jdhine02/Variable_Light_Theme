@@ -115,18 +115,15 @@
                         {
                             "Header" : "Points",
                             "MarginLeft" : 12,
+                            "RenderForce" : true,
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
                                 "Background": "{BackgroundDefault}",
-                                "ColorizeBackground": {
-                                    "Enabled": true,
-                                    "Color": "{Item.Team.Color}",
-                                    "BlendPercentage": 75
-                                },
                                 "Source" : "{Item.Points, Converter=NumberZeroToEmpty}",
                                 "Foreground" : "{WhiteText}",
                                 "TextOptionsExtern" : "primaryNumber",
+                                "RenderForce" : true,
                                 "ColorizeBackground": {
                                     "Enabled": true,
                                     "Color": "#FFFF00",

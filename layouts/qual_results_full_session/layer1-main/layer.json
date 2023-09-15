@@ -217,6 +217,7 @@
                                         "Source": "{Item.LapsCount, Converter=NumberZeroToEmpty}",
                                         "HorizontalAlignment": "Center",
                                         "VerticalAlignment": "Center",
+                                        "RenderForce": true,
                                         "TextOptions": {
                                             "FontName": "{FontNameDefault}",
                                             "FontSize": 24,      

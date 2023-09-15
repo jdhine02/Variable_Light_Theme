@@ -180,6 +180,7 @@
                                         "Source": "{Item.DriverPointsString}",
                                         "HorizontalAlignment": "Center",
                                         "VerticalAlignment": "Center",
+                                        "RenderForce": true,
                                         "TextOptions": {
                                             "FontName": "{FontNameDefault}",
                                             "FontSize": 32,     
@@ -901,6 +902,7 @@
                                                 "Source": "{Item.PenaltyTimeStringLeftPart, Converter=NumberZeroToEmpty}",
                                                 "HorizontalAlignment": "Center",
                                                 "VerticalAlignment": "Center",
+                                                "RenderForce": true,
                                                 "TextOptions": {
                                                     "FontName": "{FontNameDefault}",
                                                     "FontSize": 24,
@@ -937,6 +939,7 @@
                                                 "Source": "{Item.PenaltyTimeStringRightPart,  Converter=NumberZeroToEmpty}",
                                                 "HorizontalAlignment": "Center",
                                                 "VerticalAlignment": "Center",
+                                                "RenderForce": true,
                                                 "TextOptions": {
                                                     "FontName": "{FontNameDefault}",
                                                     "FontSize": 24,
@@ -967,6 +970,7 @@
                                         "Source": "    {Item.PenaltyPosStewards, Converter=NumberZeroToEmpty}    ",
                                         "HorizontalAlignment": "Center",
                                         "VerticalAlignment": "Center",
+                                        "RenderForce": true,
                                         "TextOptions": {
                                                         "FontName": "{FontNameDefault}",
                                                         "FontSize": 28,

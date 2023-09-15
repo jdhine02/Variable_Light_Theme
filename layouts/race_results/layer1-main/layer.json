@@ -312,6 +312,7 @@
                                         "Source": "{Item.DriverPointsString}",
                                         "HorizontalAlignment": "Center",
                                         "VerticalAlignment": "Center",
+                                        "RenderForce": true,
                                         "TextOptions": {
                                             "FontName": "{FontNameDefault}",
                                             "FontSize": 32,  
